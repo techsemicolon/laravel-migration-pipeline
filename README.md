@@ -1,6 +1,10 @@
 # Laravel Migration Pipeline
 A migration pipeline to make sure same migration is not run again in multiple server setup
 
+## Version Support : 
+
+Works for Laravel version 5.3 and above.
+
 ## Introduction : 
 
 When you run `php artisan migrate` in laravel, it checks if there are any new migration files which are not yet migrated. If yes, then it runs each migration one by one and adds an entry into `migrations` table with migration name and batch number.
