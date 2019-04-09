@@ -32,8 +32,6 @@ Once installed, you can add service provider in `config/app.php` file for larave
 Techsemicolon\MigrationPipeline\ServiceProvider::class,
 ~~~
 
-~~~
-
 ## Example :
 
 Following screenshot gives you an idea where both the servers are running `php artisan migrate` at the same time. However, the right server ran migration_1 hence, left server skipped that and ran the remaining ones. 
