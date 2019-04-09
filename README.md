@@ -1,7 +1,7 @@
-# laravel-migration-pipeline
+# Laravel Migration Pipeline
 A migration pipeline to make sure same migration is not run again in autoscaling setup
 
-## The problem statement : 
+## Introduction : 
 
 When you run `php artisan migrate` in laravel, it checks if there are any new migration files which are not yet migrated. If yes, then it runs each migration one by one and adds an entry into `migrations` table with migration name and batch number.
 
@@ -15,10 +15,20 @@ We want to avoid that. If a migration is already run on the 1st server out of 3,
 
 In any given situation, if a migration is running on one server or already run ina different batch number, it will not run again. This will avoid the above problem.
 
+## Example :
+
+Following screenshot gives you an idea where both the servers are running `php artisan migrate` at the same time. However, the right server ran migration_1 hence, left server skipped that and ran the remaining ones. 
+
+Also, once the migration_1 was ran by right server, migration_2, migration_3 and migration_4 were skipped because those were already run by the left server.
+
+<p align="center">
+    <img alt="Laravel Migration Pipeline" src="images/Example.png">
+</p>
+
+
 ## Note : 
 
 This package assumes/requires that you give unique names to your migrations. By default each migration in laravel is unique if you use `php artisan make:migration some_table_migration` where laravel adds timestamp at the start of migration file name. But in case you are removing that timestamp, make sure you have something in the migration file name which marks it as unique.
-
 
 ## License : 
 
