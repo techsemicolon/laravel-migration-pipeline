@@ -1,5 +1,5 @@
 # Laravel Migration Pipeline
-A migration pipeline to make sure same migration is not run again in autoscaling setup
+A migration pipeline to make sure same migration is not run again in multiple server setup
 
 ## Introduction : 
 

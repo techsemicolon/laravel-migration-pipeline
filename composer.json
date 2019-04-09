@@ -1,5 +1,5 @@
 {
-    "name": "techsemicolon/gitdeployer",
+    "name": "techsemicolon/laravel-migration-pipeline",
     "license": "MIT",
     "authors": [
         {
@@ -7,7 +7,7 @@
             "email": "mihirbhende1201@gmail.com"
         }
     ],
-    "description": "Git webhook deployer package for laravel currently integrated with bitbucket",
+    "description": "A migration pipeline to make sure same migration is not run again in multiple server setup",
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.0"
