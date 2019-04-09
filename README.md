@@ -15,6 +15,21 @@ We want to avoid that. If a migration is already run on the 1st server out of 3,
 
 In any given situation, if a migration is running on one server or already run ina different batch number, it will not run again. This will avoid the above problem.
 
+## Installation : 
+
+To install the package using composer : 
+
+~~~bash
+composer require techsemicolon/gitdeployer
+~~~
+
+Once installed, you can add service provider in `config/app.php` file for laravel version <= 5.4. For later versions the service provider will be automatically included.
+~~~php
+Techsemicolon\MigrationPipeline\ServiceProvider::class,
+~~~
+
+~~~
+
 ## Example :
 
 Following screenshot gives you an idea where both the servers are running `php artisan migrate` at the same time. However, the right server ran migration_1 hence, left server skipped that and ran the remaining ones. 
